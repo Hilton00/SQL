@@ -1,0 +1,32 @@
+/*List of celebrities and what they like to do*/
+
+CREATE TABLE People ( id INTEGER PRIMARY KEY, name TEXT, Age INTEGER);
+
+INSERT INTO People VALUES (1,"Keanu Reeves", 58);
+INSERT INTO People VALUES (2,"Tom Holland", 26);
+INSERT INTO People VALUES (3,"Tom Cruise", 60);
+INSERT INTO People VALUES (4,"Adam Sandler", 56);
+INSERT INTO People VALUES (5,"Halle Berry", 56);
+INSERT INTO People VALUES (6,"Oprah Winfrey", 69);
+INSERT INTO People VALUES (7,"Emma Watson", 32);
+INSERT INTO People VALUES (8,"Jim Carrey", 61);
+INSERT INTO People VALUES (9,"Jenna Ortega", 20);
+INSERT INTO People VALUES (10,"Selena Gomez", 30);
+
+CREATE TABLE Hobbies ( id INTEGER PRIMARY KEY, name TEXT, person_id INTEGER);
+
+INSERT INTO Hobbies (person_id, name) VALUES(1, "Sports");
+INSERT INTO Hobbies (person_id, name) VALUES(2,"Sports");
+INSERT INTO Hobbies (person_id, name) VALUES(3,"Sports");
+INSERT INTO Hobbies (person_id, name) VALUES(4,"Music");
+INSERT INTO Hobbies (person_id, name) VALUES(5,"Sports");
+INSERT INTO Hobbies (person_id, name) VALUES(6,"Read");
+INSERT INTO Hobbies (person_id, name) VALUES(7,"Sports");
+INSERT INTO Hobbies (person_id, name) VALUES(8,"Art");
+INSERT INTO Hobbies (person_id, name) VALUES(9,"Writing");
+INSERT INTO Hobbies (person_id, name) VALUES(10,"Sports");
+
+SELECT p.name, h.name
+FROM People p
+JOIN Hobbies h
+ON p.id = h.person_id;
